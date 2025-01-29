@@ -1,11 +1,12 @@
-@extends('profiles.layout')
+@extends('profiles.layout') 
 @include('profiles.navbar')
+
 @section('content')
     <div class="card mt-5">
-        <h2 class="card-header">Lockin system</h2>
+        <h2 class="card-header">Student Data Management System</h2>
         <div class="card-body">
             @if(session('success'))
-                <div class="alert alert-success" role="alert">
+                <div id="successAlert" class="alert alert-success" role="alert">
                     {{ session('success') }}
                 </div>
             @endif
@@ -60,8 +61,21 @@
             {{ $profiles->links('pagination::bootstrap-5') }}
         </div>
     </div>
+
     <form action="{{ route('logout') }}" method="POST" style="display: inline;">
         @csrf
         <button type="submit" class="btn btn-danger">Logout</button>
     </form>
 @endsection
+
+@push('scripts')
+    <script>
+        // Check if the success alert exists and hide it after 5 seconds
+        var successAlert = document.getElementById('successAlert');
+        if (successAlert) {
+            setTimeout(function() {
+                successAlert.style.display = 'none';
+            }, 5000); // Hide after 5 seconds
+        }
+    </script>
+@endpush
