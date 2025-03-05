@@ -1,7 +1,7 @@
  University: IT Buriram Rajabhat University
 
- Kedsarin  Thirpdram
+ Kedsarin  Thirodram
 
- Year 4, Group 1
+ Year 4, 
 
   #Project Student Data Management System 
